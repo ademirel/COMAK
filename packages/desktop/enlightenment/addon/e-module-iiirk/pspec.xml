@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>e-module-iiirk</Name>
+        <Homepage>http://www.enlightenment.org</Homepage>
+        <Packager>
+            <Name>Özge Barbaros</Name>
+            <Email>ozgebarbaros@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Iiirk Taskbar Module</Summary>
+        <Description>This module act like a taskbar for selected applications only.</Description>
+        <Archive sha1sum="60527a7484c226a388377ad959e031b5b9d79385" type="targz">http://comak.comu.edu.tr/source/e-module-iiirk-0.0.1_58042.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>git</Dependency><!--autopoint is not working-->
+            <Dependency>eet-devel</Dependency>
+            <Dependency>edje-devel</Dependency>
+            <Dependency>evas-devel</Dependency>
+            <Dependency>eeze-devel</Dependency>
+            <Dependency>eina-devel</Dependency>
+            <Dependency>ecore-devel</Dependency>
+            <Dependency>efreet-devel</Dependency>
+            <Dependency>e_dbus-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>e-module-iiirk</Name>
+        <RuntimeDependencies>
+            <Dependency>eet</Dependency>
+            <Dependency>edje</Dependency>
+            <Dependency>evas</Dependency>
+            <Dependency>eeze</Dependency>
+            <Dependency>eina</Dependency>
+            <Dependency>ecore</Dependency>
+            <Dependency>efreet</Dependency>
+            <Dependency>e_dbus</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/enlightenment/modules/iiirk</Path>
+            <Path fileType="library">/usr/lib/enlightenment/modules/iiirk</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="2">
+            <Date>2011-03-27</Date>
+            <Version>0.0.1_58042</Version>
+            <Comment>
+                * Version Bump.
+                * added translations.
+            </Comment>
+            <Name>Engin Manap</Name>
+            <Email>engin@comu.edu.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2011-03-09</Date>
+            <Version>0.0.1_55225</Version>
+            <Comment>First release.</Comment>
+            <Name>Özge Barbaros</Name>
+            <Email>ozgebarbaros@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
+

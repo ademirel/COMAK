@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>elsa</Name>
+        <Summary xml:lang="tr">Enlightenment masaüstü ortamının giriş yöneticisi</Summary>
+        <Description xml:lang="tr">Elsa, entrance yerine gelen Enlightenment masaüstü ortamının giriş yöneticisidir. Pam kullanır ve /etc/elsa.conf dosyası aracılığıyla bütün özellikleri ayarlanabilir.</Description>
+    </Source>
+</PISI>
+

@@ -1,0 +1,114 @@
+diff -Nuar enlightenment.orig/config/Makefile.am enlightenment/config/Makefile.am
+--- enlightenment.orig/config/Makefile.am	2011-03-23 15:11:14.464000063 +0200
++++ enlightenment/config/Makefile.am	2011-03-23 15:45:51.053000063 +0200
+@@ -1,5 +1,5 @@
+ MAINTAINERCLEANFILES = Makefile.in
+-SUBDIRS = default standard minimalist scaleable netbook illume illume-home
++SUBDIRS = default standard minimalist scaleable netbook
+ 
+ EET_EET = @eet_eet@
+ 
+diff -Nuar enlightenment.orig/src/modules/wizard/Makefile.am enlightenment/src/modules/wizard/Makefile.am
+--- enlightenment.orig/src/modules/wizard/Makefile.am	2011-03-23 15:11:14.427000063 +0200
++++ enlightenment/src/modules/wizard/Makefile.am	2011-03-23 15:28:51.345000052 +0200
+@@ -23,8 +23,6 @@
+                          page_010.la \
+                          page_020.la \
+                          page_030.la \
+-                         page_070.la \
+-                         page_080.la \
+                          page_200.la
+ 
+ ### disabled because profile selector really does the job. code here just for
+@@ -82,16 +80,16 @@
+ #page_060_la_DEPENDENCIES = $(top_builddir)/config.h
+ 
+ #Choose appliactions
+-page_070_la_SOURCES      = page_070.c
+-page_070_la_LIBADD       = @e_libs@ @dlopen_libs@
+-page_070_la_LDFLAGS      = -module -avoid-version
+-page_070_la_DEPENDENCIES = $(top_builddir)/config.h
++#page_070_la_SOURCES      = page_070.c
++#page_070_la_LIBADD       = @e_libs@ @dlopen_libs@
++#page_070_la_LDFLAGS      = -module -avoid-version
++#page_070_la_DEPENDENCIES = $(top_builddir)/config.h
+ 
+ #Choose quick launch
+-page_080_la_SOURCES      = page_080.c
+-page_080_la_LIBADD       = @e_libs@ @dlopen_libs@
+-page_080_la_LDFLAGS      = -module -avoid-version
+-page_080_la_DEPENDENCIES = $(top_builddir)/config.h
++#page_080_la_SOURCES      = page_080.c
++#page_080_la_LIBADD       = @e_libs@ @dlopen_libs@
++#page_080_la_LDFLAGS      = -module -avoid-version
++#page_080_la_DEPENDENCIES = $(top_builddir)/config.h
+ 
+ page_200_la_SOURCES      = page_200.c
+ page_200_la_LIBADD       = @e_libs@ @dlopen_libs@
+diff -Nuar enlightenment.orig/src/modules/wizard/page_010.c enlightenment/src/modules/wizard/page_010.c
+--- enlightenment.orig/src/modules/wizard/page_010.c	2011-03-23 15:11:14.427000063 +0200
++++ enlightenment/src/modules/wizard/page_010.c	2011-03-23 15:34:37.684000063 +0200
+@@ -16,28 +16,29 @@
+ const E_Intl_Pair basic_language_predefined_pairs[ ] = {
+      {"bg_BG.UTF-8", "lang-bg_BG.png", "Български"},
+      {"ca_ES.UTF-8", "lang-ca_ES.png", "Català"},
+-     {"zh_CN.UTF-8", "lang-zh_CN.png", "Chinese (Simplified)"},
+-     {"zh_TW.UTF-8", "lang-zh_TW.png", "Chinese (Traditional)"},
+      {"cs_CZ.UTF-8", "lang-cs_CZ.png", "Čeština"},
+      {"da_DK.UTF-8", "lang-da_DK.png", "Dansk"},
+-     {"nl_NL.UTF-8", "lang-nl_NL.png", "Nederlands"},
++     {"de_DE.UTF-8", "lang-de_DE.png", "Deutsch"},
++     {"el_GR.UTF-8", "lang-el_GR.png", "Ελληνικά"},
+      {"en_US.UTF-8", "lang-en_US.png", "English"},
++     {"es_AR.UTF-8", "lang-es_AR.png", "Español"},
+      {"fi_FI.UTF-8", "lang-fi_FI.png", "Suomi"},
+      {"fr_FR.UTF-8", "lang-fr_FR.png", "Français"},
+-     {"de_DE.UTF-8", "lang-de_DE.png", "Deutsch"},
+      {"hu_HU.UTF-8", "lang-hu_HU.png", "Magyar"},
+      {"it_IT.UTF-8", "lang-it_IT.png", "Italiano"},
+      {"ja_JP.UTF-8", "lang-ja_JP.png", "日本語"},
+      {"ko_KR.UTF-8", "lang-ko_KR.png", "한국어"},
+      {"nb_NO.UTF-8", "lang-nb_NO.png", "Norsk Bokmål"},
++     {"nl_NL.UTF-8", "lang-nl_NL.png", "Nederlands"},
+      {"pl_PL.UTF-8", "lang-pl_PL.png", "Polski"},
+      {"pt_BR.UTF-8", "lang-pt_BR.png", "Português"},
+      {"ru_RU.UTF-8", "lang-ru_RU.png", "Русский"},
+      {"sk_SK.UTF-8", "lang-sk_SK.png", "Slovenčina"},
+      {"sl_SI.UTF-8", "lang-sl_SI.png", "Slovenščina"},
+-     {"es_AR.UTF-8", "lang-es_AR.png", "Español"},
+      {"sv_SE.UTF-8", "lang-sv_SE.png", "Svenska"},
+-     {"el_GR.UTF-8", "lang-el_GR.png", "Ελληνικά"},
++     {"tr_TR.UTF-8", "lang-tr_TR.png", "Türkçe"},
++     {"zh_CN.UTF-8", "lang-zh_CN.png", "Chinese (Simplified)"},
++     {"zh_TW.UTF-8", "lang-zh_TW.png", "Chinese (Traditional)"},
+      { NULL, NULL, NULL }
+ };
+ 
+diff -Nuar enlightenment.orig/src/modules/wizard/page_200.c enlightenment/src/modules/wizard/page_200.c
+--- enlightenment.orig/src/modules/wizard/page_200.c	2011-03-23 15:11:14.429000063 +0200
++++ enlightenment/src/modules/wizard/page_200.c	2011-03-23 15:45:07.910000068 +0200
+@@ -37,13 +37,13 @@
+ EAPI int
+ wizard_page_apply(E_Wizard_Page *pg __UNUSED__)
+ {
+-   char buf[PATH_MAX];
++   /*char buf[PATH_MAX];*/
+    // setup ~/Desktop and ~/.e/e/fileman/favorites and 
+    // ~/.e/e/applications/bar/default, maybe ~/.e/e/applications/startup/.order
+ 
+    // FIXME: should become a wizard page on its own
+    // setup fileman favorites
+-   snprintf(buf, sizeof(buf),
++/*   snprintf(buf, sizeof(buf),
+ 	    "gzip -d -c < %s/data/other/efm_favorites.tar.gz | "
+ 	    "(cd %s/.e/e/ ; tar -xkf -)",
+ 	    e_prefix_data_get(), e_user_homedir_get());
+@@ -58,7 +58,7 @@
+    e_user_homedir_snprintf(buf, sizeof(buf), "%s/%s", _("Desktop"), "root.desktop");
+    ecore_file_symlink("../.e/e/fileman/favorites/root.desktop", buf);
+    e_user_homedir_snprintf(buf, sizeof(buf), "%s/%s", _("Desktop"), "tmp.desktop");
+-   ecore_file_symlink("../.e/e/fileman/favorites/tmp.desktop", buf);
++   ecore_file_symlink("../.e/e/fileman/favorites/tmp.desktop", buf);*/
+    
+    // save the config now everyone has modified it
+    e_config_save();

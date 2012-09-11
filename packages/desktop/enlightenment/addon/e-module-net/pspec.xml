@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>e-module-net</Name>
+        <Homepage>http://www.enlightenment.org</Homepage>
+        <Packager>
+            <Name>Özge Barbaros</Name>
+            <Email>ozgebarbaros@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Network interface monitor module for Enlightenment</Summary>
+        <Description>e-module-net is a network interface monitor module for Enlightenment.</Description>
+        <Archive sha1sum="1123c386c363ed6288c13b2cd9d7f9ea533b1f44" type="targz">http://comak.comu.edu.tr/source/e-module-net-0.0.1_58042.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>git</Dependency>
+            <Dependency>eet-devel</Dependency>
+            <Dependency>edje-devel</Dependency>
+            <Dependency>evas-devel</Dependency>
+            <Dependency>eina-devel</Dependency>
+            <Dependency>ecore-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>e-module-net</Name>
+        <RuntimeDependencies>
+            <Dependency>eet</Dependency>
+            <Dependency>edje</Dependency>
+            <Dependency>evas</Dependency>
+            <Dependency>eina</Dependency>
+            <Dependency>ecore</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="2">
+            <Date>2011-03-27</Date>
+            <Version>0.0.1_58042</Version>
+            <Comment>
+                * Version Bump.
+                * added translations.
+            </Comment>
+            <Name>Engin Manap</Name>
+            <Email>engin@comu.edu.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2011-02-11</Date>
+            <Version>0.0.1_55225</Version>
+            <Comment>First release.</Comment>
+            <Name>Özge Barbaros</Name>
+            <Email>ozgebarbaros@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>brasero</Name>
+        <Homepage>http://projects.gnome.org/brasero/</Homepage>
+        <Packager>
+            <Name>Mehmet Zahit Şamat</Name>
+            <Email>m.z.samat@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:gui</IsA>
+        <Summary>Brasero (aka Bonfire) is yet another application to burn CD/DVD for the gnome desktop</Summary>
+        <Description>Brasero (aka Bonfire) is yet another application to burn CD/DVD for the gnome desktop.</Description>
+        <Archive sha1sum="56141108561f2b8d45998662b86cf6e20f0ff4f2" type="tarbz2">mirrors://gnome/brasero/2.32/brasero-2.32.1.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="2.0.0">gconf-devel</Dependency>
+            <Dependency>gnome-doc-utils</Dependency>
+            <Dependency versionFrom="0.10.0">gstreamer-devel</Dependency>
+            <Dependency versionFrom="0.10.0">gst-plugins-base-devel</Dependency>
+            <Dependency versionFrom="1.0.0">libunique-devel</Dependency>
+            <Dependency versionFrom="2.0.0">gconf-devel</Dependency>
+            <Dependency>libSM-devel</Dependency>
+            <Dependency versionFrom="0.1.0">libcanberra-devel</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>libburn-devel</Dependency>
+            <Dependency>gconf-devel</Dependency>
+            <Dependency>libcanberra-gtk</Dependency>
+            <Dependency>totem-pl-parser-devel</Dependency>
+            <Dependency>nautilus-devel</Dependency>
+            <Dependency>libisofs-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">brasero-2.32.0-build-plugins-against-local-library.patch</Patch>
+            <Patch level="1">11_nautilus_menu_no_display.patch</Patch>
+            <Patch level="1">31_link_libice.patch</Patch>
+            <Patch level="1">new-gir.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>brasero</Name>
+        <RuntimeDependencies>
+            <Dependency>atk</Dependency>
+            <Dependency>gtk2</Dependency>
+            <Dependency>cairo</Dependency>
+            <Dependency>pango</Dependency>
+            <Dependency>libSM</Dependency>
+            <Dependency>libICE</Dependency>
+            <Dependency>freetype</Dependency>
+            <Dependency>gstreamer</Dependency>
+            <Dependency>libunique</Dependency>
+            <Dependency>gdk-pixbuf</Dependency>
+            <Dependency>fontconfig</Dependency>
+            <Dependency>libcanberra</Dependency>
+            <Dependency>libcanberra-gtk</Dependency>
+            <Dependency>gst-plugins-base</Dependency>
+            <Dependency>totem-pl-parser</Dependency>
+            <Dependency>gmime</Dependency>
+            <Dependency>libburn</Dependency>
+            <Dependency>nautilus</Dependency>
+            <Dependency>libisofs</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>brasero-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">brasero</Dependency>
+            <Dependency>gtk2-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/gtk-doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2011-03-17</Date>
+            <Version>2.32.1</Version>
+            <Comment>First release.</Comment>
+            <Name>Mehmet Zahit Şamat</Name>
+            <Email>m.z.samat@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
+

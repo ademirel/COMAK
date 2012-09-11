@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>e-module-mpdule</Name>
+        <Homepage>http://www.enlightenment.org</Homepage>
+        <Packager>
+            <Name>Mehmet Zahit Şamat</Name>
+            <Email>m.z.samat@gmail.com</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>data</IsA>
+        <Summary>Music Player Daemon (MPD) module for Enlightenment17 desktop shell</Summary>
+        <Description>e-module-mpdule is a Music Player Daemon controller and status shower module for Enlightenment17 desktop shell.</Description>
+        <Archive sha1sum="1f00044bb550c963caaf764a4d0b24994acf66ce" type="targz">http://comak.comu.edu.tr/source/e-module-mpdule-0.0.1_58042.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>enlightenment-devel</Dependency>
+            <Dependency>libmpd-devel</Dependency>
+            <Dependency>eet-devel</Dependency>
+            <Dependency>edje-devel</Dependency>
+            <Dependency>eina-devel</Dependency>
+            <Dependency>evas-devel</Dependency>
+            <Dependency>ecore-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>e-module-mpdule</Name>
+        <RuntimeDependencies>
+            <Dependency>enlightenment</Dependency>
+            <Dependency>libmpd</Dependency>
+            <Dependency>eet</Dependency>
+            <Dependency>edje</Dependency>
+            <Dependency>eina</Dependency>
+            <Dependency>evas</Dependency>
+            <Dependency>ecore</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/lib/enlightenment</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="3">
+            <Date>2011-03-27</Date>
+            <Version>0.0.1_58042</Version>
+            <Comment>
+                * Version Bump.
+                * added translations.
+            </Comment>
+            <Name>Engin Manap</Name>
+            <Email>engin@comu.edu.tr</Email>
+        </Update>
+        <Update release="2">
+            <Date>2011-02-17</Date>
+            <Version>0.0.1</Version>
+            <Comment>Update</Comment>
+            <Name>Mehmet Zahit Şamat</Name>
+            <Email>m.z.samat@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2009-04-04</Date>
+            <Version>0.0.1_20090404</Version>
+            <Comment>First release</Comment>
+            <Name>H. İbrahim Güngör</Name>
+            <Email>h.ibrahim.gungor@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>exchange</Name>
+        <Summary xml:lang="tr">Enlightenment için kütüphane dosyaları</Summary>
+        <Description xml:lang="tr">Enlightenment için kütüphane dosyaları</Description>
+    </Source>
+</PISI>
+

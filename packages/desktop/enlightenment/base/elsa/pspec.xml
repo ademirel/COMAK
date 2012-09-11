@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>elsa</Name>
+        <Homepage>http://www.enlightenment.org</Homepage>
+        <Packager>
+            <Name>Necdet Yücel</Name>
+            <Email>necdetyucel@gmail.com</Email>
+        </Packager>
+        <License>GPLv3</License>
+        <IsA>app:gui</IsA>
+        <Summary>Login manager of enlightenment desktop environment</Summary>
+        <Description>Elsa is the login manager for Enlightenment desktop environment that replaces entrance. It uses pam, and can be configured with /etc/elsa.conf.</Description>
+        <Archive sha1sum="03c06ea98189e7d8aba23a25a5be929b86633d41" type="tarbz2">http://comak.comu.edu.tr/source/elsa-0.0.1_20110224.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>efreet-devel</Dependency>
+            <Dependency>eina-devel</Dependency>
+            <Dependency>eet-devel</Dependency>
+            <Dependency>ecore-devel</Dependency>
+            <Dependency>elementary-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!--<Patch level="1">startElsaAtBoot.patch</Patch>-->
+            <Patch level="1">turkish.patch</Patch>
+            <Patch level="1">elsaConsoleKit.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>elsa</Name>
+        <RuntimeDependencies>
+            <Dependency>eet</Dependency>
+            <Dependency>edje</Dependency>
+            <Dependency>eina</Dependency>
+            <Dependency>evas</Dependency>
+            <Dependency>ecore</Dependency>
+            <Dependency>efreet</Dependency>
+            <Dependency>elementary</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/pam.d/</Path>
+            <Path fileType="config">/etc/elsa/elsa.conf</Path>
+            <Path fileType="executable">/etc/elsa/Xsession</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/display-managers/elsa.desktop">elsa.desktop</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+            <COMAR script="package.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2011-03-31</Date>
+            <Version>0.0.1_20110224</Version>
+            <Comment>fix not executable problem.</Comment>
+            <Name>Engin Manap</Name>
+            <Email>engin@comu.edu.tr</Email>
+        </Update>
+        <Update release="2">
+            <Date>2011-03-12</Date>
+            <Version>0.0.1_20110224</Version>
+            <Comment>add ConsoleKit integration.</Comment>
+            <Name>Engin Manap</Name>
+            <Email>engin@comu.edu.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2011-02-15</Date>
+            <Version>0.0.1_20110224</Version>
+            <Comment>First release.</Comment>
+            <Name>Engin Manap</Name>
+            <Email>engin@comu.edu.tr</Email>
+        </Update>
+    </History>
+</PISI>
+

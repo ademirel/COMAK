@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>gnome-commander</Name>
+        <Homepage>http://www.nongnu.org/gcmd</Homepage>
+        <Packager>
+            <Name>Necdet Yücel</Name>
+            <Email>necdetyucel@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>gnote</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>A powerful file manager for the GNOME desktop environment</Summary>
+        <Description>GNOME Commander is a 'two-pane' graphical file manager for the GNOME desktop environment.</Description>
+        <Archive sha1sum="d99bca36ccd4b37426b696c5ab911f79b3fbf6a9" type="tarxz">mirrors://gnome/gnome-commander/1.2/gnome-commander-1.2.8.12.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>gtk2-devel</Dependency>
+            <Dependency>pango-devel</Dependency>
+            <Dependency>poppler-devel</Dependency>
+            <Dependency>libgnome-devel</Dependency>
+            <Dependency>gnome-vfs-devel</Dependency>
+            <Dependency>gdk-pixbuf-devel</Dependency>
+            <Dependency>libgnomeui-devel</Dependency>
+            <Dependency>libgsf-devel</Dependency>
+            <Dependency>exiv2-libs</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">1001-invalid_menu_item_edit_mime.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>gnome-commander</Name>
+        <RuntimeDependencies>
+            <Dependency>gtk2</Dependency>
+            <Dependency>pango</Dependency>
+            <Dependency>poppler</Dependency>
+            <Dependency>libgnome</Dependency>
+            <Dependency>gnome-vfs</Dependency>
+            <Dependency>gdk-pixbuf</Dependency>
+            <Dependency>libgnomeui</Dependency>
+            <Dependency>libgsf</Dependency>
+            <Dependency>exiv2-libs</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="data">/usr/share/omf</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2011-06-16</Date>
+            <Version>1.2.8.12</Version>
+            <Comment>First release.</Comment>
+            <Name>Necdet Yücel</Name>
+            <Email>necdetyucel@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
+

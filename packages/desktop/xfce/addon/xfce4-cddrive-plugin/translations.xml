@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>xfce4-cddrive-plugin</Name>
+        <Summary xml:lang="tr">CD-ROM sürücü tepsisini açmak eya kapamak için eklenti</Summary>
+        <Description xml:lang="tr">CD-ROM sürücüsünü açmak veya kapamak için panele buton ekleyen eklenti.</Description>
+    </Source>
+</PISI>

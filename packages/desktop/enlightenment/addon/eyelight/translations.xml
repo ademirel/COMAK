@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>eyelight</Name>
+        <Summary xml:lang="tr">Bir sunum hazırlama programı</Summary>
+        <Description xml:lang="tr">Eyelight ile basit ASCII dosyalarından güzel sunumlar hazırlanabilir.</Description>
+    </Source>
+
+    <Package>
+        <Name>eyelight-devel</Name>
+        <Summary xml:lang="tr">Eyelight için geliştirme dosyaları</Summary>
+    </Package>
+</PISI>
+
